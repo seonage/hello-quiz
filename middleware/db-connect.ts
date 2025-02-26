@@ -30,7 +30,9 @@ async function dbConnect(): Promise<any> {
 
         cached.promise = mongoose
             .connect(MONGO_URI, opts)
-            .then((mongoose) => mongoose)
+            .then((mongoose) => {
+                console.log('DB connected')
+                mongoose})
             .catch((err) => {
                 throw new Error(String(err));
             });
