@@ -9,6 +9,14 @@ export const QuestionSchema: Schema = new Schema<QuestionType>({
         type: ["String"],
         required: true,
     },
+    category: {
+        type: ["String"],
+        required: true,
+    },
+    correct_answer: {
+        type: "String",
+        required: true,
+    }
 });
 
 export declare type QuestionType = InferSchemaType<typeof QuestionSchema>;
