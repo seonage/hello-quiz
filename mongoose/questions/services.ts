@@ -10,3 +10,13 @@ export async function returnAllQuestions(): Promise<QuestionType[] | []> {
     }
     return [];
 }
+
+export async function returnRandomQuestion(): Promise<QuestionType | null | {}> {
+    try {
+        let result: QuestionType | null = await Questions.findOne();
+        return result as QuestionType;
+    } catch (err) {
+        console.log(err);
+    }
+    return {};
+}
