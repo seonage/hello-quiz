@@ -1,7 +1,6 @@
-import { NextResponse, NextRequest } from "next/server";
 import { returnRandomQuestion } from "@/mongoose/questions/services";
 
-export async function GET( req: NextRequest): Promise<NextResponse> {
+/*export async function GET( req: NextRequest): Promise<NextResponse> {
     let question = await returnRandomQuestion();
     return NextResponse.json(
         {
@@ -9,4 +8,6 @@ export async function GET( req: NextRequest): Promise<NextResponse> {
         },
         { status: 200 }
     )
-}
+}*/
+
+export async function ServerComponentQuestions(): Promise<JSX.Element | Error> {}
