@@ -6,17 +6,17 @@ export async function returnAllQuestions(): Promise<QuestionType[] | []> {
         let result: Array<QuestionType | undefined> = await Questions.find();
         return result as QuestionType[];
     } catch (err) {
-        console.log(err);
+        console.log('Could not recieve all the questions ', err);
     }
     return [];
 }
 
-export async function returnRandomQuestion(): Promise<QuestionType | null | {}> {
+
+export async function returnSingleRandomQuestion() {
     try {
-        let result: QuestionType | null = await Questions.findOne();
-        return result as QuestionType;
+        let question = await Questions.aggregate([{ $sample: { size: 1 } }]);
+        return question;
     } catch (err) {
-        console.log(err);
+        console.log('Could not retrieve a single question ', err)
     }
-    return {};
 }
