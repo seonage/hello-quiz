@@ -1,3 +1,12 @@
 import { NextResponse, NextRequest } from "next/server";
+import { returnRandomQuestion } from "@/mongoose/questions/services";
 
-//need to create services calling a specific question
+export async function GET( req: NextRequest): Promise<NextResponse> {
+    let question = await returnRandomQuestion();
+    return NextResponse.json(
+        {
+            question
+        },
+        { status: 200 }
+    )
+}
