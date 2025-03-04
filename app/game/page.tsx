@@ -14,12 +14,10 @@ export default async function ServerComponentQuestions(): Promise<JSX.Element | 
     }
     poppedQuestion = JSON.stringify(question.pop());
     questionJSON = JSON.parse(poppedQuestion);
-    //console.log(questionJSON);
 
     return(
         <div>
             <h2>Game Page</h2>
-            {questionJSON.question}
             <QuestionCard question={questionJSON}/>
         </div>
     )
