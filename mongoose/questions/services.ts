@@ -19,4 +19,5 @@ export async function returnSingleRandomQuestion() {
     } catch (err) {
         console.log('Could not retrieve a single question ', err)
     }
+    return [];
 }
