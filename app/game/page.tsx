@@ -3,8 +3,8 @@ import QuestionCard from "./component";
 
 export default async function ServerComponentQuestions(): Promise<JSX.Element | Error> {
     let question: String[] | [];
-    let poppedQuestion: string;
-    let questionJSON;
+    let poppedQuestion;
+    let questionProps: QuestionProps;
     try {
         question = await returnSingleRandomQuestion();
     } catch (err: any) {
@@ -13,12 +13,12 @@ export default async function ServerComponentQuestions(): Promise<JSX.Element | 
         }
     }
     poppedQuestion = JSON.stringify(question.pop());
-    questionJSON = JSON.parse(poppedQuestion);
+    questionProps = JSON.parse(poppedQuestion);
 
     return(
         <div>
             <h2>Game Page</h2>
-            <QuestionCard question={questionJSON}/>
+            <QuestionCard {...questionProps}/>
         </div>
     )
 }

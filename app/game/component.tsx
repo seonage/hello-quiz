@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 
-export default function QuestionCard(props: any): JSX.Element {
+export default function QuestionCard(props: QuestionProps): JSX.Element {
     const[answer, setAnswer] = useState(null);
-    const question: String  = props.question.question;
-    const listChoices: String[] = props.question.choices.map((choice: string) => <li key={choice}>{choice}</li>);
-    console.log(props.question)
+    const question: String = props.question;
+    const listChoices = props.choices.map((choice) => <li key={choice.toString()}>{choice}</li>);
+    console.log(props)
 
     return (
         <>
