@@ -1,4 +1,8 @@
 .questionbox {
+    border-radius: 25px;
+    outline-color: #3ea0d4;
+    outline-width: 0.5em;
+    outline-style: outset;
     background-color: #0181cb;
     margin: 4em;
     padding: 1.5em;
@@ -7,6 +11,7 @@
 .question {
     font-weight: bold;
     color: black;
+    padding-bottom: 0.5em;
 }
 
 .choices {
