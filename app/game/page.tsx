@@ -16,9 +16,6 @@ export default async function ServerComponentQuestions(): Promise<JSX.Element | 
     questionProps = JSON.parse(poppedQuestion);
 
     return(
-        <div>
-            <h2>Game Page</h2>
             <QuestionCard {...questionProps}/>
-        </div>
     )
 }
