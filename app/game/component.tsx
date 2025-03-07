@@ -12,7 +12,9 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
     return (
         <div className={styles.questionbox}>
             <h1>Question is: {question}</h1>
-            {listChoices}
+            <div className={styles.question}>
+                {listChoices}
+            </div>
         </div>
     )
 }

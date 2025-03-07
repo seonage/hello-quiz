@@ -1,5 +1,9 @@
 .questionbox{
     background-color: #0181cb;
-    color: #f4fdff;
+    font-weight: bold;
     padding: 1.5em;
+}
+
+.question {
+    color: #f4fdff;
 }
