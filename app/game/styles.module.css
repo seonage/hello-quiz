@@ -1,9 +1,14 @@
-.questionbox{
+.questionbox {
     background-color: #0181cb;
-    font-weight: bold;
+    margin: 4em;
     padding: 1.5em;
 }
 
 .question {
+    font-weight: bold;
+    color: black;
+}
+
+.choices {
     color: #f4fdff;
 }

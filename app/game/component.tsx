@@ -11,8 +11,8 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
 
     return (
         <div className={styles.questionbox}>
-            <h1>Question is: {question}</h1>
-            <div className={styles.question}>
+            <h1 className={styles.question}>Question is: {question}</h1>
+            <div className={styles.choices}>
                 {listChoices}
             </div>
         </div>
