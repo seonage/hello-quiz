@@ -17,3 +17,8 @@
 .choices {
     color: #f4fdff;
 }
+
+.choices ul {
+    margin: auto;
+    padding: 0.25em;
+}
