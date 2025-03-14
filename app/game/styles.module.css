@@ -11,7 +11,13 @@
 .question {
     font-weight: bold;
     color: black;
-    padding-bottom: 1.5em;
+    padding: 1em;
+    margin-bottom: 1.5em;
+    background-color: #d3f4fa;
+    border-radius: 25px;
+    outline-color: #edb8c0;
+    outline-width: 0.35em;
+    outline-style: outset;
 }
 
 .choices {
