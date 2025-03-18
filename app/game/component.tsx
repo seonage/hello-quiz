@@ -26,7 +26,7 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
             <h1 className={styles.question}>{question}</h1>
             <div className={styles.choices}>
                 {props.choices.map((choice) => {
-                    return <ul key={choice.toString()} choice={choice.toString()} onClick={handleClick}>{choice}</ul>
+                    return <ul key={choice} choice={choice} onClick={handleClick}>{choice}</ul>
                 })}
             </div>
         </div>
