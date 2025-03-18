@@ -9,10 +9,15 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
     console.log(props)
 
     const handleClick = (event) => {
-        console.log(event.currentTarget.getAttribute("choice"))
         let selectedChoice: string = event.currentTarget.getAttribute("choice");
         if (answer === '') {
             setAnswer(selectedChoice);
+            if (selectedChoice === props.correct_answer) {
+                console.log("Correct");
+            }
+            else {
+                console.log("Wrong");
+            }
         }
     }
 

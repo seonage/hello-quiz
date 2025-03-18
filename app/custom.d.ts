@@ -3,5 +3,5 @@ interface QuestionProps {
     question: string;
     choices: string[];
     category: string[];
-    correctanswer: string;
+    correct_answer: string;
 }
