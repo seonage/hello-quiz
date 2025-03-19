@@ -9,7 +9,7 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
     console.log(props)
 
     const handleClick = (event) => {
-        let selectedChoice: string = event.currentTarget.getAttribute("choice");
+        let selectedChoice: string = event.target.textContent;
         if (answer === '') {
             setAnswer(selectedChoice);
             if (selectedChoice === props.correct_answer) {
@@ -26,7 +26,7 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
             <h1 className={styles.question}>{question}</h1>
             <div className={styles.choices}>
                 {props.choices.map((choice) => {
-                    return <ul key={choice} choice={choice} onClick={handleClick}>{choice}</ul>
+                    return <ul key={choice} onClick={handleClick}>{choice}</ul>
                 })}
             </div>
         </div>
