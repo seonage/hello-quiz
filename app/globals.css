@@ -19,3 +19,11 @@ body {
   background: #74c9f4;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#correctAnswer {
+  display: none;
+}
+
+#wrongAnswer {
+  display: none;
+}
