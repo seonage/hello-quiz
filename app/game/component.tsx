@@ -4,7 +4,6 @@ import { createRef, useState } from "react";
 import styles from './styles.module.css';
 
 export default function QuestionCard(props: QuestionProps): JSX.Element {
-    const[answer, setAnswer] = useState('');
     const question: String = props.question;
     let rightAnswerDisplay: HTMLElement | null, wrongAnswerDisplay: HTMLElement | null; //Want to make sure this is set before user does anything on page
     console.log(props)
