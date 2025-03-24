@@ -12,14 +12,15 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
     const handleClick = (event) => {
         let selectedChoice: string = event.target.textContent;
 
+        //Maybe put in state change after user choice is determined to be correct or incorrect
         if (answer === '' && rightAnswerDisplay != null && wrongAnswerDisplay != null) {
             if (selectedChoice === props.correct_answer) {
                 console.log("Correct");
-                rightAnswerDisplay.style.display = "block";
+                rightAnswerDisplay.classList.add('reveal');
             }
             else {
                 console.log("Wrong");
-                wrongAnswerDisplay.style.display = "block";
+                wrongAnswerDisplay.classList.add('reveal');
             }
         }
     }
@@ -36,9 +37,11 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
             </div>
             <div id="correctAnswer" ref={node => {if (node) {rightAnswerDisplay =  document.getElementById('correctAnswer')}}}>
                 <h1>Correct answer</h1>
+                <button>Next Question</button>
             </div>
             <div id={"wrongAnswer"} ref={node => {if (node) {wrongAnswerDisplay =  document.getElementById('wrongAnswer')}}}>
                 <h1>Wrong answer</h1>
+                <button>Next Question</button>
             </div>
         </>
         
