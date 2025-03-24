@@ -26,6 +26,10 @@ body {
 
 #correctAnswer.reveal {
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 0.5em;
 }
 
 #wrongAnswer {
@@ -34,4 +38,8 @@ body {
 
 #wrongAnswer.reveal {
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 0.5em;
 }

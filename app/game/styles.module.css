@@ -41,3 +41,9 @@
     border-color: #d3f4fa ;
     background-color: #ee6c9c;
 }
+
+.nextQuestionButton {
+    background-color: #edb8c0;
+    margin-top: 1em;
+    padding: 0.5em; 
+}
