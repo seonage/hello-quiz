@@ -44,6 +44,14 @@
 
 .nextQuestionButton {
     background-color: #edb8c0;
-    margin-top: 1em;
-    padding: 0.5em; 
+    border-radius: 20px;
+    margin: 1em 1em;
+    padding: 0.75em; 
+}
+
+.nextQuestionButton:hover {
+    background-color: #ee6c9c;
+    border-radius: 20px;
+    margin: 1em 1em;
+    padding: 0.75em; 
 }

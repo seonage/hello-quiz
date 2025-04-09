@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 export default function QuestionCard(props: QuestionProps): JSX.Element {
     const[questionNumber, setQuestionNumber] = useState(0);
     const router = useRouter();
-    let answered = false; //check to make sure this is reset to false after new Question is rendered
+    let answered = false;
     const question: String = props.question;
     let rightAnswerDisplay: HTMLElement | null, wrongAnswerDisplay: HTMLElement | null; //Want to make sure this is set before user does anything on page
     console.log(props)
