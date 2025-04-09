@@ -62,6 +62,9 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
                 <h1>Wrong answer</h1>
                 <button className={styles.nextQuestionButton} onClick={handleNextQuestionClick}>Next Question</button>
             </div>
+            <div>
+                <button className={styles.quitgame}>Quit Game</button>
+            </div>
         </>
         
     )
