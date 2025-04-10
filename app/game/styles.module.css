@@ -72,16 +72,5 @@
 }
 
 .quitgame:hover{
-    position: relative;
-    left: 40%;
-    border-radius: 10px;
-    outline-color: black;
-    outline-width: 0.55em;
-    outline-style: outset;
     background-color: #ee6c9c;
-    margin: 4em;
-    padding: 1.5em;
-    color: white;
-    font-size: 1.25em;
-    font-weight: 900;
 }
