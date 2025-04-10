@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from './styles.module.css';
+import Link from "next/link";
 
 export default function QuestionCard(props: QuestionProps): JSX.Element {
     const[questionNumber, setQuestionNumber] = useState(0);
@@ -28,10 +29,14 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
         }
     }
 
+    const handleQuitClick = () => {
+        console.log("Quit game")
+    }
+
     /*This click should make another call to DB to get a new question and then re-render screen for all players
     Should I trigger a state change that will call something in useEffect?
     */
-    const handleNextQuestionClick = (event) => {
+    const handleNextQuestionClick = () => {
         console.log("Next question clicked");
         setQuestionNumber( prev => (prev + 1));
         if (rightAnswerDisplay != null && wrongAnswerDisplay != null) {
@@ -63,7 +68,9 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
                 <button className={styles.nextQuestionButton} onClick={handleNextQuestionClick}>Next Question</button>
             </div>
             <div>
-                <button className={styles.quitgame}>Quit Game</button>
+                <Link href="/">
+                  <button className={styles.quitgame}>Quit Game</button>
+                </Link>
             </div>
         </>
         
