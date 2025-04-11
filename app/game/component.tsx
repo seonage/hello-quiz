@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 import Link from "next/link";
 
 export default function QuestionCard(props: QuestionProps): JSX.Element {
-    const[questionNumber, setQuestionNumber] = useState(0);
+    const[questionNumber, setQuestionNumber] = useState(1);
     const router = useRouter();
     let answered = false;
     const question: String = props.question;
@@ -69,7 +69,7 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
             </div>
             <div>
                 <Link href="/">
-                  <button className={styles.quitgame}>Quit Game</button>
+                  <button className={styles.quitgame} onClick={handleQuitClick}>Quit Game</button>
                 </Link>
             </div>
         </>

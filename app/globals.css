@@ -21,11 +21,14 @@ body {
 }
 
 #intro {
-  color: white;
-  font-size: 2.5em;
+  color: #fffdfe;
+  background-color: #0181cb;
+  font-size: 3em;
+  font-family: "Lucida Bright", Courier, monospace;
   display: block;
   text-align: center;
-  margin: 1em 1em;
+  padding: 0.5em;
+  margin: 2em 5em;
 }
 
 #newGameButton {
@@ -41,7 +44,7 @@ body {
 }
 
 #newGameButton:hover {
-  background-color: royalblue;
+  background-color: #0d6cac
 }
 
 #correctAnswer {
@@ -88,4 +91,8 @@ body {
 
 #wrongAnswer.reveal h1 {
   font-size: 2em;
+}
+
+.subtitle {
+  font-size: 0.6em;
 }
