@@ -9,8 +9,12 @@ export default async function Home(): Promise<JSX.Element | Error> {
         <div className="subtitle">Since2025</div>
       </div>
       <Link href="/game">
-        <button id="newGameButton">New Game</button>
+        <button className="GameButton">New Game - Unlimited Questions</button>
       </Link>
+      <Link href="/game/10">
+        <button className="GameButton">New Game - 3 Questions</button>
+      </Link>
+      
     </>
   )
 }

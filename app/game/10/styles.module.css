@@ -1,0 +1,76 @@
+.questionbox {
+    border-radius: 25px;
+    outline-color: #fcfefe;
+    outline-width: 0.35em;
+    outline-style: outset;
+    background-color: #0181cb;
+    margin: 4em;
+    padding: 1.5em;
+}
+
+.question {
+    font-weight: bold;
+    color: black;
+    padding: 1em;
+    margin-bottom: 1.5em;
+    background-color: #d3f4fa;
+    border-radius: 25px;
+    outline-color: #edb8c0;
+    outline-width: 0.35em;
+    outline-style: outset;
+}
+
+.choices {
+    color: #f4fdff;
+}
+
+.choices ul {
+    margin: auto;
+    margin-bottom: 2em;
+    padding: 0.5em;
+    border-width: 0.25em;;
+    border-color: #d3f4fa ;
+    background-color: #39a6e4;
+}
+
+.choices ul:hover {
+    margin: auto;
+    margin-bottom: 2em;
+    padding: 0.5em;
+    border-width: 0.25em;;
+    border-color: #d3f4fa ;
+    background-color: #ee6c9c;
+}
+
+.nextQuestionButton {
+    background-color: #edb8c0;
+    border-radius: 20px;
+    margin: 1em 1em;
+    padding: 0.75em; 
+}
+
+.nextQuestionButton:hover {
+    background-color: #ee6c9c;
+    border-radius: 20px;
+    margin: 1em 1em;
+    padding: 0.75em; 
+}
+
+.quitgame{
+    position: relative;
+    left: 40%;
+    border-radius: 10px;
+    outline-color: black;
+    outline-width: 0.55em;
+    outline-style: outset;
+    background-color: #0181cb;
+    margin: 4em;
+    padding: 1.5em;
+    color: white;
+    font-size: 1.25em;
+    font-weight: 900;
+}
+
+.quitgame:hover{
+    background-color: #ee6c9c;
+}

@@ -31,18 +31,6 @@ body {
   margin: 2em 5em;
 }
 
-#newGameButton {
-  background-color: #edb8c0;
-  border-radius: 20px;
-  padding: 0.75em;
-  display: block;
-  text-align: center;
-  margin: 1em 1em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10%;
-}
-
 #newGameButton:hover {
   background-color: #0d6cac
 }
@@ -95,4 +83,16 @@ body {
 
 .subtitle {
   font-size: 0.6em;
+}
+
+.GameButton {
+  background-color: #edb8c0;
+  border-radius: 20px;
+  padding: 0.75em;
+  display: block;
+  text-align: center;
+  margin: 1em 1em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
 }
