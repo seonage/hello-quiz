@@ -39,7 +39,12 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
             rightAnswerDisplay.classList.remove('reveal');
             wrongAnswerDisplay.classList.remove('reveal');
         }
-        router.refresh();
+        if (questionNumber != 1 ) {
+            router.refresh();
+        }
+        else {
+            console.log('Game Over')
+        }
     }
 
     return (
