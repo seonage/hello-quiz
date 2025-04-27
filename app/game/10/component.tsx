@@ -1,19 +1,29 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from './styles.module.css';
 import Link from "next/link";
 
-export default function QuestionCard(props: QuestionProps): JSX.Element {
+export default function QuestionCard(props: any): JSX.Element { //Change props to array of questions?
     const[questionNumber, setQuestionNumber] = useState(3);
-    const router = useRouter();
+    let questionProps: QuestionProps;
+    //const router = useRouter();
     let answered = false;
-    const question: String = props.question;
+    //const question: String = props.question; Set Question as state and try to change state to change the question that is rendered as a card
+    const[question, setQuestion] = useState(props.question); //Right now the Question isn't refreshed after use clicks on Next Question
     let rightAnswerDisplay: HTMLElement | null, wrongAnswerDisplay: HTMLElement | null;
-    console.log(props)
+    console.log("Passed props initial: " + props.questions + typeof props.questions);
+    let parsedProps = JSON.parse(props.questions);
+    console.log(JSON.stringify(parsedProps[0]));
+    let poppedQuestion = parsedProps.pop();
+    console.log(poppedQuestion.question + typeof poppedQuestion.question);
 
-    const handleAnswerClick = (event) => {
+    useEffect( () => {
+        setQuestion(poppedQuestion.question);
+    }, []);
+
+    /*const handleAnswerClick = (event) => {
         let selectedChoice: string = event.target.textContent;
 
         if (answered === false && rightAnswerDisplay != null && wrongAnswerDisplay != null) {
@@ -34,41 +44,26 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
 
     const handleNextQuestionClick = () => {
         console.log("Next question clicked");
-        setQuestionNumber( prev => (prev - 1));
+        setQuestionNumber( prev => (prev - 1) );
         if (rightAnswerDisplay != null && wrongAnswerDisplay != null) {
             rightAnswerDisplay.classList.remove('reveal');
             wrongAnswerDisplay.classList.remove('reveal');
         }
         if (questionNumber != 1 ) {
-            router.refresh();
+            router.refresh(); //How to reset the Question without refreshing?
+            //Pop question from passedQuestions and Parse it here?
         }
         else {
+            //Redirect towards Game Over page with results?
             console.log('Game Over')
+            router.push('/');
         }
-    }
+    }*/
 
     return (
         <>
             <div className={styles.questionbox}>
                 <h1 className={styles.question}>{question}</h1>
-                <div className={styles.choices}>
-                    {props.choices.map((choice) => {
-                        return <ul key={choice} onClick={handleAnswerClick}>{choice}</ul>
-                    })}
-                </div>
-            </div>
-            <div id="correctAnswer" ref={node => {if (node) {rightAnswerDisplay =  document.getElementById('correctAnswer')}}}>
-                <h1>Correct answer</h1>
-                <button className={styles.nextQuestionButton} onClick={handleNextQuestionClick}>Next Question</button>
-            </div>
-            <div id={"wrongAnswer"} ref={node => {if (node) {wrongAnswerDisplay =  document.getElementById('wrongAnswer')}}}>
-                <h1>Wrong answer</h1>
-                <button className={styles.nextQuestionButton} onClick={handleNextQuestionClick}>Next Question</button>
-            </div>
-            <div>
-                <Link href="/">
-                  <button className={styles.quitgame} onClick={handleQuitClick}>Quit Game</button>
-                </Link>
             </div>
         </>    
     )

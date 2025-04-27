@@ -7,13 +7,16 @@ export default async function ServerComponentQuestions(): Promise<JSX.Element | 
     let questionProps: QuestionProps;
     try {
         question = await returnSingleRandomQuestion();
+        console.log("Initial data from DB: " + question);
     } catch (err: any) {
         return {
             notFound: true,
         }
     }
     poppedQuestion = JSON.stringify(question.pop());
+    console.log("Popped question: " + poppedQuestion);
     questionProps = JSON.parse(poppedQuestion);
+    console.log("Passed to component: " + questionProps)
 
     return(
             <QuestionCard {...questionProps}/>
