@@ -7,10 +7,6 @@ import Link from "next/link";
 
 export default function QuestionCard(props: any): JSX.Element { //Change props to array of questions?
     const[questionNumber, setQuestionNumber] = useState(3);
-    let questionProps: QuestionProps;
-    //const router = useRouter();
-    let answered = false;
-    //const question: String = props.question; Set Question as state and try to change state to change the question that is rendered as a card
     const[question, setQuestion] = useState(props.question); //Right now the Question isn't refreshed after use clicks on Next Question
     let rightAnswerDisplay: HTMLElement | null, wrongAnswerDisplay: HTMLElement | null;
     console.log("Passed props initial: " + props.questions + typeof props.questions);
@@ -18,10 +14,6 @@ export default function QuestionCard(props: any): JSX.Element { //Change props t
     console.log("What is type of parsedProps? " + typeof parsedProps);
     let poppedQuestion = parsedProps.pop()!; //Assertion should be fine since we are keeping track of number of questions
     console.log("poppedQuestion type: " + typeof poppedQuestion)
-    /*console.log(JSON.stringify(parsedProps[0])); //Probably reasons why parsedProps[0] is undefined
-    console.log(typeof JSON.stringify(parsedProps[0]))
-    let poppedQuestion: QuestionProps = parsedProps.pop();
-    console.log(poppedQuestion.question + typeof poppedQuestion.question);*/
 
     useEffect( () => {
         setQuestion(poppedQuestion.question);

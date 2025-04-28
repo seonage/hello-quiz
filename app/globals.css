@@ -96,3 +96,7 @@ body {
   margin-right: auto;
   width: 10%;
 }
+
+.GameButton:hover {
+  background-color: #ee6c9c;
+}
