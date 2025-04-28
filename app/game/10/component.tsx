@@ -14,6 +14,7 @@ export default function QuestionCard(props: any): JSX.Element { //Change props t
     console.log("What is type of parsedProps? " + typeof parsedProps);
     let poppedQuestion = parsedProps.pop()!; //Assertion should be fine since we are keeping track of number of questions
     console.log("poppedQuestion type: " + typeof poppedQuestion)
+    let choices = poppedQuestion.choices;
 
     useEffect( () => {
         setQuestion(poppedQuestion.question);
@@ -60,6 +61,11 @@ export default function QuestionCard(props: any): JSX.Element { //Change props t
         <>
             <div className={styles.questionbox}>
                 <h1 className={styles.question}>{question}</h1>
+                <div className={styles.choices}>
+                    {choices.map((choice) => {
+                        return <ul key={choice}>{choice}</ul>
+                    })}
+                </div>
             </div>
             <div>
                 <Link href="/">
