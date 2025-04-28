@@ -14,10 +14,14 @@ export default function QuestionCard(props: any): JSX.Element { //Change props t
     const[question, setQuestion] = useState(props.question); //Right now the Question isn't refreshed after use clicks on Next Question
     let rightAnswerDisplay: HTMLElement | null, wrongAnswerDisplay: HTMLElement | null;
     console.log("Passed props initial: " + props.questions + typeof props.questions);
-    let parsedProps = JSON.parse(props.questions);
-    console.log(JSON.stringify(parsedProps[0]));
-    let poppedQuestion = parsedProps.pop();
-    console.log(poppedQuestion.question + typeof poppedQuestion.question);
+    let parsedProps: QuestionProps[] = JSON.parse(props.questions); //Does it matter if this is strongly typed?
+    console.log("What is type of parsedProps? " + typeof parsedProps);
+    let poppedQuestion = parsedProps.pop()!; //Assertion should be fine since we are keeping track of number of questions
+    console.log("poppedQuestion type: " + typeof poppedQuestion)
+    /*console.log(JSON.stringify(parsedProps[0])); //Probably reasons why parsedProps[0] is undefined
+    console.log(typeof JSON.stringify(parsedProps[0]))
+    let poppedQuestion: QuestionProps = parsedProps.pop();
+    console.log(poppedQuestion.question + typeof poppedQuestion.question);*/
 
     useEffect( () => {
         setQuestion(poppedQuestion.question);
@@ -36,13 +40,13 @@ export default function QuestionCard(props: any): JSX.Element { //Change props t
                 answered = true;
             }
         }
-    }
+    }*/
 
     const handleQuitClick = () => {
         console.log("Quit game")
     }
 
-    const handleNextQuestionClick = () => {
+    /*const handleNextQuestionClick = () => {
         console.log("Next question clicked");
         setQuestionNumber( prev => (prev - 1) );
         if (rightAnswerDisplay != null && wrongAnswerDisplay != null) {
@@ -64,6 +68,11 @@ export default function QuestionCard(props: any): JSX.Element { //Change props t
         <>
             <div className={styles.questionbox}>
                 <h1 className={styles.question}>{question}</h1>
+            </div>
+            <div>
+                <Link href="/">
+                  <button className={styles.quitgame} onClick={handleQuitClick}>Quit Game</button>
+                </Link>
             </div>
         </>    
     )
