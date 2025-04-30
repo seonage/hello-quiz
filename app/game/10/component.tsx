@@ -11,29 +11,18 @@ export default function QuestionCard(props: any): JSX.Element {
     const[question, setQuestion] = useState('');
     const[questionArray, setQuestionArray] = useState(JSON.parse(props.questions)); //Reset this each time a question is answered
 
-    //Below is commented out because I'm setting props passed from server component to a hook as an array and then popping from array each time
-    //new question is needed
-
-    console.log("Question Array state: " + questionArray);
     let rightAnswerDisplay: HTMLElement | null, wrongAnswerDisplay: HTMLElement | null;
-    console.log("Passed props initial: " + props.questions + typeof props.questions);
-    let parsedProps: QuestionProps[] = JSON.parse(props.questions); //Does it matter if this is strongly typed?
-    console.log("What is type of parsedProps? " + typeof parsedProps);
-    let poppedQuestion = parsedProps.pop()!; //Assertion should be fine since we are keeping track of number of questions
-    console.log("poppedQuestion type: " + typeof poppedQuestion)
-    let choices: string[] = poppedQuestion.choices;
-    let correctAnswer: string = poppedQuestion.correct_answer;
+    let currentQuestion: QuestionProps =  JSON.parse(JSON.stringify(questionArray[questionNumber - 1]))
+    console.log("Current Question: " + currentQuestion.question + questionNumber);
+    let choices: string[] = currentQuestion.choices;
+    let correctAnswer: string = currentQuestion.correct_answer;
     let answered = false;
-    console.log("Answered is: " + answered); // Printing this out because I'm trying to see if variables are being reset
-    
 
     useEffect( () => {
-        setQuestion(poppedQuestion.question);
-        //setQuestionArray(parsedProps); //Figure out way to properly set this array. Right now is undefined because no declaration yet
-        console.log("Use effect called");
+        setQuestion(currentQuestion.question);
+        console.log("Popped: " + currentQuestion.question);
+        console.log("Use effect called: " + questionNumber);
     });
-
-    //Second effect that fires when question is popped?
 
     const handleAnswerClick = (event) => {
         let selectedChoice: string = event.target.textContent;
@@ -62,7 +51,6 @@ export default function QuestionCard(props: any): JSX.Element {
         }
         if (questionNumber != 1 ) {
             setQuestionNumber( (prev) => (prev - 1));
-            setQuestionArray(parsedProps); //Causing issue since this is a QuestionProps[] type rather than string
         }
         else {
             //Redirect towards Game Over page with results?
