@@ -8,10 +8,10 @@ import Link from "next/link";
 export default function QuestionCard(props: any): JSX.Element {
     const router = useRouter();
     const[questionNumber, setQuestionNumber] = useState(3); //When this changes, new question should pop and go through all the variable setting below
-    const[questionArray, setQuestionArray] = useState(JSON.parse(props.questions)); //Reset this each time a question is answered
+    const questionArray = JSON.parse(props.questions);
 
     const rightAnswerDisplay = useRef<HTMLDivElement>(null), wrongAnswerDisplay = useRef<HTMLDivElement>(null);
-    let answered = useRef(false);
+    const answered = useRef(false);
     const renderCount = useRef(0);
     renderCount.current++;
 
@@ -20,7 +20,7 @@ export default function QuestionCard(props: any): JSX.Element {
 
     const currentQuestion = useMemo(() => {
         return questionArray[questionNumber - 1];
-    }, [questionArray, questionNumber]);
+    }, [questionNumber]);
 
     const { question, choices, correct_answer } = currentQuestion;
 
