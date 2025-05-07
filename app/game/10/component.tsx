@@ -1,13 +1,13 @@
 'use client'
 
-import { useEffect, useState, useRef, useMemo } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import styles from './styles.module.css';
 import Link from "next/link";
 
 export default function QuestionCard(props: any): JSX.Element {
     const router = useRouter();
-    const[questionNumber, setQuestionNumber] = useState(3); //When this changes, new question should pop and go through all the variable setting below
+    const[questionNumber, setQuestionNumber] = useState(3);
     const questionArray = JSON.parse(props.questions);
 
     const rightAnswerDisplay = useRef<HTMLDivElement>(null), wrongAnswerDisplay = useRef<HTMLDivElement>(null);
@@ -18,10 +18,7 @@ export default function QuestionCard(props: any): JSX.Element {
     console.log("Question Number: " + questionNumber);
     console.log(`MyComponent has rendered ${renderCount.current} times`);
 
-    const currentQuestion = useMemo(() => {
-        return questionArray[questionNumber - 1];
-    }, [questionNumber]);
-
+    const currentQuestion = questionArray[questionNumber - 1];
     const { question, choices, correct_answer } = currentQuestion;
 
     const handleAnswerClick = (event) => {
