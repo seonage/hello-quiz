@@ -14,7 +14,7 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
     console.log("Client: " + props)
     console.log("Props.question: " + props.question)
 
-    const handleAnswerClick = (event) => {
+    const handleAnswerClick = (event: any) => {
         const selectedChoice: string = event.target.textContent;
 
         //How to maintain the score of the users? useRef()?
