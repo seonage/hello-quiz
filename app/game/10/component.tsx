@@ -22,7 +22,7 @@ export default function QuestionCard(props: any): JSX.Element {
     const { question, choices, correct_answer } = currentQuestion;
 
     const handleAnswerClick = (event) => {
-        let selectedChoice: string = event.target.textContent;
+        const selectedChoice: string = event.target.textContent;
 
         if (answered.current === false && rightAnswerDisplay.current != null && wrongAnswerDisplay.current != null) {
             if (selectedChoice === correct_answer) {

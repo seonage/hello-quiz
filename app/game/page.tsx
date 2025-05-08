@@ -2,7 +2,7 @@ import { returnSingleRandomQuestion } from "@/mongoose/questions/services";
 import QuestionCard from "./component";
 
 export default async function ServerComponentQuestions(): Promise<JSX.Element | Error> {
-    let question: String[] | [];
+    let question: string[] | [];
     let poppedQuestion;
     let questionProps: QuestionProps;
     try {

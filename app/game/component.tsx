@@ -9,13 +9,13 @@ export default function QuestionCard(props: QuestionProps): JSX.Element {
     const[questionNumber, setQuestionNumber] = useState(1);
     const router = useRouter();
     let answered = false;
-    const question: String = props.question;
+    const question: string = props.question;
     let rightAnswerDisplay: HTMLElement | null, wrongAnswerDisplay: HTMLElement | null; //Want to make sure this is set before user does anything on page
     console.log("Client: " + props)
     console.log("Props.question: " + props.question)
 
     const handleAnswerClick = (event) => {
-        let selectedChoice: string = event.target.textContent;
+        const selectedChoice: string = event.target.textContent;
 
         //How to maintain the score of the users? useRef()?
         if (answered === false && rightAnswerDisplay != null && wrongAnswerDisplay != null) {
