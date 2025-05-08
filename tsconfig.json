@@ -8,6 +8,10 @@
       "esnext"
     ],
     "allowJs": true,
+    "types": [
+      "react",
+      "react-dom"
+    ],
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
