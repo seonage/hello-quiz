@@ -1,5 +1,6 @@
 import Questions from "mongoose/questions/model";
 import { QuestionType } from "./schema";
+import dbConnect from "@/middleware/db-connect";
 
 export async function returnAllQuestions(): Promise<QuestionType[] | []> {
     try {
@@ -14,6 +15,7 @@ export async function returnAllQuestions(): Promise<QuestionType[] | []> {
 
 export async function returnSingleRandomQuestion() {
     try {
+        await dbConnect();
         let question = await Questions.aggregate([{ $sample: { size: 1 } }]);
         return question;
     } catch (err) {
@@ -25,6 +27,7 @@ export async function returnSingleRandomQuestion() {
 export async function return10RandomQuestions() {
     try {
         //Temporarily setting as 3 until I have more questions in the database
+        await dbConnect();
         let questions = await Questions.aggregate([{ $sample: { size : 3 }}]);
         return questions;
     } catch (err) {
