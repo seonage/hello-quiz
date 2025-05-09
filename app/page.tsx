@@ -1,7 +1,15 @@
 import Link from "next/link"
 import { JSX } from "react";
+import dbConnect from "../middleware/db-connect";
+
 
 export default async function Home(): Promise<JSX.Element | Error> {
+
+  try {
+    await dbConnect();
+  } catch(err) {
+    throw new Error("could not connect to DB on page.tsx")
+  }
 
   return (
     <>

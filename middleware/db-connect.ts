@@ -15,6 +15,7 @@ if (!cached) {
 }
 
 async function dbConnect(): Promise<any> {
+    console.log('Begin DB connect');
     if (cached.conn) {
         return cached.conn;
     }
