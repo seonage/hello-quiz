@@ -4,6 +4,7 @@ import dbConnect from "@/middleware/db-connect";
 
 export async function returnAllQuestions(): Promise<QuestionType[] | []> {
     try {
+        await dbConnect();
         let result: Array<QuestionType | undefined> = await Questions.find();
         return result as QuestionType[];
     } catch (err) {
