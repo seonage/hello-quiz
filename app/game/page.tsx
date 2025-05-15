@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { returnSingleRandomQuestion } from "@/mongoose/questions/services";
 import QuestionCard from "./component";
 import { JSX } from "react";
