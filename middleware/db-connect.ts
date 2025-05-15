@@ -22,7 +22,7 @@ async function dbConnect(): Promise<any> {
 
     if (!cached.promise) {
         const opts: ConnectOptions = {
-            bufferCommands: true,
+            bufferCommands: false,
             maxIdleTimeMS: 10000,
             serverSelectionTimeoutMS: 10000,
             socketTimeoutMS: 20000,
