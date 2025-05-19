@@ -1,7 +1,5 @@
 import Link from "next/link"
 import { JSX } from "react";
-import dbConnect from "../middleware/db-connect";
-
 
 export default async function Home(): Promise<JSX.Element | Error> {
 

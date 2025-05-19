@@ -20,6 +20,8 @@ export default function QuestionCard(props: any): JSX.Element {
 
     const currentQuestion = questionArray[questionNumber - 1];
     const { question, choices, correct_answer } = currentQuestion;
+    const firstQuestion = questionArray[2];
+    console.log("First question is: " + firstQuestion.question);
 
     const handleAnswerClick = (event: any) => {
         const selectedChoice: string = event.target.textContent;
